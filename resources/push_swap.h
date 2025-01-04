@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ihhadjal <ihhadjal@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/03 12:33:37 by ihhadjal          #+#    #+#             */
-/*   Updated: 2025/01/04 16:37:29 by ihhadjal         ###   ########.fr       */
+/*   Created: 2025/01/02 12:22:03 by ihhadjal          #+#    #+#             */
+/*   Updated: 2025/01/04 16:05:00 by ihhadjal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../resources/push_swap.h"
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
+# include <stdbool.h>
+# include <limits.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include "libft/header/ft_printf.h"
+# include "libft/header/libft.h"
 
-int main(int argc, char **argv)
+typedef struct s_stack_node
 {
-	t_stack_node	*a;
-	t_stack_node	*b;
+	struct	s_stack_node *target;
+	struct	s_stack_node *previous;
+	struct	s_stack_node *next;
+}	t_stack_node;
 
-	a = NULL;
-	b = NULL;
-	if (argc == 1 || (argc == 2 && !argv[1][0]))
-		return (ft_printf("Error\n"));
-	else if (argc == 2)
-		argv = ft_split(argv[1], 32);
-	init_stack(&a, argv[1]);
-}
+void	init_stack(t_stack_node **a, char **argv);
+#endif

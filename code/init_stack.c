@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   init_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ihhadjal <ihhadjal@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/02 12:22:03 by ihhadjal          #+#    #+#             */
-/*   Updated: 2025/01/04 10:06:15 by ihhadjal         ###   ########.fr       */
+/*   Created: 2025/01/04 16:05:28 by ihhadjal          #+#    #+#             */
+/*   Updated: 2025/01/04 16:37:40 by ihhadjal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-# include <stdbool.h>
-# include <limits.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include "../libft/header/ft_printf.h"
-# include "../libft/header/libft.h"
+#include "../resources/push_swap.h"
 
-#endif
+void	init_stack(t_stack_node **a, char **argv)
+{
+	
+}

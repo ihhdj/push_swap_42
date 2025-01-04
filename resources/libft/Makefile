@@ -6,7 +6,7 @@
 #    By: ihhadjal <ihhadjal@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/06 16:36:14 by ihhadjal          #+#    #+#              #
-#    Updated: 2025/01/02 13:02:50 by ihhadjal         ###   ########.fr        #
+#    Updated: 2025/01/04 10:17:46 by ihhadjal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ PRINTF_PATH = ./printf
 
 PRINTF_SRC = ${addprefix ${PRINTF_PATH}/, ft_printf.c ft_putchar.c ft_putstr.c ft_putnbr.c ft_uputnbr.c ft_puthex.c ft_putptr.c}
 
-SRCS = ${PRINTF_SRC}
+SRCS = ${PRINTF_SRC} ${LIBFT_SRC}
 
 OBJS = ${SRCS:.c=.o}
 

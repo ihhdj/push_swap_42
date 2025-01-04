@@ -6,7 +6,7 @@
 /*   By: ihhadjal <ihhadjal@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 15:54:08 by ihhadjal          #+#    #+#             */
-/*   Updated: 2024/12/06 19:09:15 by ihhadjal         ###   ########.fr       */
+/*   Updated: 2025/01/04 10:38:06 by ihhadjal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,13 +73,16 @@ char	**ft_split(char const *s, char c)
 	return (res);
 }
 
-// int main (void)
+// int main (int argc, char **argv)
 // {
-// 	char *s = "  salut iheb comment ca va        ";
-// 	char **res = ft_split(s, ' ');
-// 	while (*res)
+// 	int i = 0;
+// 	if (argc == 2)
 // 	{
-// 		printf("%s\n", *res);
-// 		res++;
+// 		argv = ft_split(argv[1], 32);
+// 		while(argv[i])
+// 		{
+// 			printf("%s\n", argv[i]);
+// 			i++;
+// 		}
 // 	}
 // }
