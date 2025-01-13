@@ -6,7 +6,7 @@
 /*   By: ihhadjal <ihhadjal@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 11:17:53 by ihhadjal          #+#    #+#             */
-/*   Updated: 2025/01/13 13:18:47 by ihhadjal         ###   ########.fr       */
+/*   Updated: 2025/01/13 13:47:36 by ihhadjal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,4 +81,29 @@ char	**my_split(char *str, char separator)
 	}
 	res[i] = NULL;
 	return(res);
+}
+
+long	ft_atol(char *str)
+{
+	int		i;
+	long	res;
+	int		signe;
+
+	i = 0;
+	res = 0;
+	signe = 1;
+	while((str[i] >= 9 && str[i] <= 13) || (str[i] == ' '))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			signe = -signe;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		res = res * 10 + (str[i] - '0');
+		i++;
+	}
+	return (res * signe);
 }

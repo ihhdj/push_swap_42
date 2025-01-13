@@ -6,7 +6,7 @@
 /*   By: ihhadjal <ihhadjal@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 13:22:24 by ihhadjal          #+#    #+#             */
-/*   Updated: 2024/12/06 19:09:15 by ihhadjal         ###   ########.fr       */
+/*   Updated: 2025/01/13 14:20:44 by ihhadjal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 t_list	*ft_lstlast(t_list	*lst)
 {
+	if (lst == NULL)
+		return (NULL);
 	while (lst && lst -> next)
 	{
 		lst = lst -> next;
