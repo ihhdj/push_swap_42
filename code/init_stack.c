@@ -6,13 +6,13 @@
 /*   By: ihhadjal <ihhadjal@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 16:05:28 by ihhadjal          #+#    #+#             */
-/*   Updated: 2025/01/04 16:37:40 by ihhadjal         ###   ########.fr       */
+/*   Updated: 2025/01/13 12:32:59 by ihhadjal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../resources/push_swap.h"
 
-void	init_stack(t_stack_node **a, char **argv)
-{
+// void	init_stack(stack_node **a, char **argv)
+// {
 	
-}
+// }

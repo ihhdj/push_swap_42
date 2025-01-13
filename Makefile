@@ -6,11 +6,11 @@
 #    By: ihhadjal <ihhadjal@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/02 12:09:38 by ihhadjal          #+#    #+#              #
-#    Updated: 2025/01/04 16:37:43 by ihhadjal         ###   ########.fr        #
+#    Updated: 2025/01/13 11:18:19 by ihhadjal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = code/main.c code/init_stack.c
+SRCS = code/main.c code/init_stack.c code/utils.c
 OBJS = ${SRCS:.c=.o}
 NAME = push_swap
 CC = gcc
