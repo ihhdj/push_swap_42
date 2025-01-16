@@ -6,7 +6,7 @@
 /*   By: ihhadjal <ihhadjal@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 16:00:30 by ihhadjal          #+#    #+#             */
-/*   Updated: 2025/01/16 16:41:04 by ihhadjal         ###   ########.fr       */
+/*   Updated: 2025/01/16 20:31:50 by ihhadjal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ int	check_string(char **str)
 	i = 1;
 	while (str[i])
 	{
-		j = 1;
+		j = 0;
 		while (str[i][j])
 		{
-			if (!ft_isdigit(str[i][j]) && str[i][j] != '-' && str[i][j] != '+')
+			if (!ft_isdigit(str[i][j]))
 				return (ft_printf("Error: insert numbers only\n"), 1);
 			j++;
 		}
