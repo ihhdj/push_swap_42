@@ -6,7 +6,7 @@
 /*   By: ihhadjal <ihhadjal@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 15:54:08 by ihhadjal          #+#    #+#             */
-/*   Updated: 2025/01/04 10:38:06 by ihhadjal         ###   ########.fr       */
+/*   Updated: 2025/01/15 12:11:13 by ihhadjal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ static char	*ft_cpy(char **res, const char *s, char sep)
 		len = 0;
 		while (*s == sep && *s)
 			s++;
+		// printf("%s\n", s);
 		while (*s != sep && *s)
 		{
 			len++;

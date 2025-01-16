@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ihhadjal <ihhadjal@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/03 12:33:37 by ihhadjal          #+#    #+#             */
-/*   Updated: 2025/01/16 16:41:26 by ihhadjal         ###   ########.fr       */
+/*   Created: 2025/01/16 16:00:30 by ihhadjal          #+#    #+#             */
+/*   Updated: 2025/01/16 16:41:04 by ihhadjal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../resources/push_swap.h"
 
-int main(int argc, char **argv)
+void	parsing(char **str)
 {
-	char	**argv_split;
-	int		i;
+	check_string(str);
+}
+int	check_string(char **str)
+{
+	int	i;
+	int	j;
 
-	i = 0;
-	if (argc == 1 || (argc == 2 && !argv[1][0]))
-		return (ft_printf("Error: the argument is empty\n"), 1);
-	else if (argc == 2)
+	i = 1;
+	while (str[i])
 	{
-		argv_split = ft_split(argv[1], 32);
-		while (argv_split[i])
-			free (argv_split[i++]);
-		free (argv_split);
+		j = 1;
+		while (str[i][j])
+		{
+			if (!ft_isdigit(str[i][j]) && str[i][j] != '-' && str[i][j] != '+')
+				return (ft_printf("Error: insert numbers only\n"), 1);
+			j++;
+		}
+		i++;
 	}
-	parsing(argv);
+	return (0);
 }

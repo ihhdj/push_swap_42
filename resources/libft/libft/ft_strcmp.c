@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_stack.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ihhadjal <ihhadjal@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/04 16:05:28 by ihhadjal          #+#    #+#             */
-/*   Updated: 2025/01/13 14:25:19 by ihhadjal         ###   ########.fr       */
+/*   Created: 2025/01/15 11:14:14 by ihhadjal          #+#    #+#             */
+/*   Updated: 2025/01/15 11:16:15 by ihhadjal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../resources/push_swap.h"
+#include "../header/libft.h"
 
-void	init_stack(stack_node **a, char **argv)
+int	ft_strcmp(char *s1, char *s2)
 {
-	long	nbr;
-	while(*argv)
+	while (*s1 == *s2 && *s1)
 	{
-		nbr = atol(*argv);
+		s1++;
+		s2++;
 	}
+	return (*s1 - *s2);
 }
+
