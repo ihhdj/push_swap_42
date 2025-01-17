@@ -6,7 +6,7 @@
 /*   By: iheb <iheb@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 12:33:37 by ihhadjal          #+#    #+#             */
-/*   Updated: 2025/01/17 14:26:30 by iheb             ###   ########.fr       */
+/*   Updated: 2025/01/17 14:58:52 by iheb             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,18 @@ int main(int argc, char **argv)
 		return (ft_printf("Error: the argument is empty\n"), 1);
 	if (argc == 2)
 	{
+		i = 0;
 		argv_split = ft_split(argv[1], 32);
 		argv = argv_split;
+		while (argv[i])
+			parsing(argv[i++]);
 	}
-	while (argv[i])
-		parsing(argv[i++]);
-	free_argv(argv_split);
+	if (argc > 1)
+	{
+		while (argv[i])
+			parsing(argv[i++]);
+	}
+	if (argv_split)
+		free_argv(argv_split);
 	return (0);
 }
