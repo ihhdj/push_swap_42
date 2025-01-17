@@ -6,7 +6,7 @@
 /*   By: iheb <iheb@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 12:22:03 by ihhadjal          #+#    #+#             */
-/*   Updated: 2025/01/17 14:23:51 by iheb             ###   ########.fr       */
+/*   Updated: 2025/01/17 15:52:53 by iheb             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include "libft/header/libft.h"
 
 void	parsing(char *str);
-int		check_string(char *str);
+int		check_argument(char *str);
+int     check_doubles(char *str);
 void    free_argv(char **str);
 #endif
