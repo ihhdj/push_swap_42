@@ -3,34 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ihhadjal <ihhadjal@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: iheb <iheb@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 16:00:30 by ihhadjal          #+#    #+#             */
-/*   Updated: 2025/01/16 20:31:50 by ihhadjal         ###   ########.fr       */
+/*   Updated: 2025/01/17 14:11:01 by iheb             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../resources/push_swap.h"
 
-void	parsing(char **str)
+void	parsing(char *str)
 {
 	check_string(str);
 }
-int	check_string(char **str)
+
+int	check_string(char *str)
 {
 	int	i;
-	int	j;
 
-	i = 1;
+	i = 0;
 	while (str[i])
 	{
-		j = 0;
-		while (str[i][j])
-		{
-			if (!ft_isdigit(str[i][j]))
-				return (ft_printf("Error: insert numbers only\n"), 1);
-			j++;
-		}
+		if (!ft_isdigit(str[i]))
+			return(ft_printf("Error: insert numbers only\n"), 1);
 		i++;
 	}
 	return (0);

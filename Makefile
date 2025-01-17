@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ihhadjal <ihhadjal@student.42nice.fr>      +#+  +:+       +#+         #
+#    By: iheb <iheb@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/02 12:09:38 by ihhadjal          #+#    #+#              #
-#    Updated: 2025/01/16 16:01:31 by ihhadjal         ###   ########.fr        #
+#    Updated: 2025/01/17 14:24:27 by iheb             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = code/main.c code/parsing.c
+SRCS = code/main.c code/parsing.c code/utils.c
 OBJS = ${SRCS:.c=.o}
 NAME = push_swap
 CC = gcc

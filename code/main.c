@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ihhadjal <ihhadjal@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: iheb <iheb@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 12:33:37 by ihhadjal          #+#    #+#             */
-/*   Updated: 2025/01/16 20:31:47 by ihhadjal         ###   ########.fr       */
+/*   Updated: 2025/01/17 14:26:30 by iheb             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main(int argc, char **argv)
 	char	**argv_split;
 	int		i;
 
-	i = 0;
+	i = 1;
 	argv_split = NULL;
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (ft_printf("Error: the argument is empty\n"), 1);
@@ -26,12 +26,8 @@ int main(int argc, char **argv)
 		argv_split = ft_split(argv[1], 32);
 		argv = argv_split;
 	}
-	parsing(argv);
-	if (argv_split)
-	{
-		while (argv_split[i])
-			free (argv_split[i++]);
-		free (argv_split);
-	}
+	while (argv[i])
+		parsing(argv[i++]);
+	free_argv(argv_split);
 	return (0);
 }

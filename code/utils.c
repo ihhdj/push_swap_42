@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iheb <iheb@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/02 12:22:03 by ihhadjal          #+#    #+#             */
-/*   Updated: 2025/01/17 14:23:51 by iheb             ###   ########.fr       */
+/*   Created: 2025/01/17 14:24:04 by iheb              #+#    #+#             */
+/*   Updated: 2025/01/17 14:25:48 by iheb             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../resources/push_swap.h"
 
-# include <stdbool.h>
-# include <limits.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <ctype.h>
-# include "libft/header/ft_printf.h"
-# include "libft/header/libft.h"
+void    free_argv(char **str)
+{
+    int i;
 
-void	parsing(char *str);
-int		check_string(char *str);
-void    free_argv(char **str);
-#endif
+    i = 0;
+    while (str[i])
+        free(str[i++]);
+    free (str);
+}
