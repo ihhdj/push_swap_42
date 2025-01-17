@@ -6,7 +6,7 @@
 /*   By: iheb <iheb@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 12:33:37 by ihhadjal          #+#    #+#             */
-/*   Updated: 2025/01/17 14:58:52 by iheb             ###   ########.fr       */
+/*   Updated: 2025/01/17 15:00:36 by iheb             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,8 @@ int main(int argc, char **argv)
 		while (argv[i])
 			parsing(argv[i++]);
 	}
-	if (argc > 1)
-	{
-		while (argv[i])
-			parsing(argv[i++]);
-	}
+	while (argv[i])
+		parsing(argv[i++]);
 	if (argv_split)
 		free_argv(argv_split);
 	return (0);
