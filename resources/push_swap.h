@@ -6,7 +6,7 @@
 /*   By: iheb <iheb@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 12:22:03 by ihhadjal          #+#    #+#             */
-/*   Updated: 2025/01/17 15:52:53 by iheb             ###   ########.fr       */
+/*   Updated: 2025/01/18 10:58:00 by iheb             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@
 
 void	parsing(char *str);
 int		check_argument(char *str);
-int     check_doubles(char *str);
+int     check_doubles(char **argv);
 void    free_argv(char **str);
 #endif

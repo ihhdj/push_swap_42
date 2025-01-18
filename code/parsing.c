@@ -6,7 +6,7 @@
 /*   By: iheb <iheb@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 16:00:30 by ihhadjal          #+#    #+#             */
-/*   Updated: 2025/01/17 18:20:02 by iheb             ###   ########.fr       */
+/*   Updated: 2025/01/18 10:57:54 by iheb             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,22 @@
 void	parsing(char *str)
 {
 	check_argument(str);
-	check_doubles(str);
 }
-int	check_doubles(char *str)
+int	check_doubles(char **argv)
 {
 	int	i;
+	int	j;
 
 	i = 0;
-	while (str[i])
+	while (argv[i])
 	{
-		if (ft_atoi(str) == ft_atoi(str + 1))
-			return (ft_printf("Error: insert the number once\n"), 1);
+		j = i + 1;
+		while (argv[j])
+		{
+			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
+				return(ft_printf("Error: insert the number once\n"), 1);
+			j++;
+		}
 		i++;
 	}
 	return (0);
