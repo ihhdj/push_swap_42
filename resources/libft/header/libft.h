@@ -3,23 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ihhadjal <ihhadjal@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: iheb <iheb@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 21:39:06 by ihhadjal          #+#    #+#             */
-/*   Updated: 2025/01/15 11:16:35 by ihhadjal         ###   ########.fr       */
+/*   Updated: 2025/01/18 12:35:17 by iheb             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-
 # include <unistd.h>
 # include <string.h>
 # include <stdlib.h>
 # include <stdio.h>
 # include <stdarg.h>
 
-int		ft_atoi(const char *nptr);
+long	ft_atoi(const char *nptr);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
