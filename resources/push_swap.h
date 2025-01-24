@@ -6,7 +6,7 @@
 /*   By: ihhadjal <ihhadjal@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 12:22:03 by ihhadjal          #+#    #+#             */
-/*   Updated: 2025/01/21 16:22:13 by ihhadjal         ###   ########.fr       */
+/*   Updated: 2025/01/24 15:43:01 by ihhadjal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,11 @@ typedef struct s_stack
 	struct s_list	*next;
 }   				t_stack;
 
-typedef struct s_data
-{
-	t_stack	*a;
-	t_stack *b;
-}			t_data;
-
-
 void	parsing(char *str);
 int		check_argument(char *str);
 int     check_doubles(char **argv);
 int     check_min_max(char *str);
 void    free_argv(char **str);
-void    main2(t_stack *a);
-t_stack	*init_stack_a(t_stack *a);
+t_stack	*ft_lstlast(t_stack	*lst);
+void	ft_lstadd_back(t_stack **lst, t_stack *new);
 #endif
