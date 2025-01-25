@@ -6,7 +6,7 @@
 /*   By: iheb <iheb@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 12:33:37 by ihhadjal          #+#    #+#             */
-/*   Updated: 2025/01/25 12:29:15 by iheb             ###   ########.fr       */
+/*   Updated: 2025/01/25 15:09:32 by iheb             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,9 @@ int main(int argc, char **argv)
 {
     int     i;
     char    **argv_split;
-	t_stack	*a;
-	// t_stack	*b;
+    t_stack *a;
 
-	a = NULL;
-	// b = NULL;
+    a = NULL;
 	argv_split = NULL;
     if (argc == 1 || (argc == 2 && !argv[1][0]))
         return (ft_printf("Error: the argument is empty\n"), 1);
@@ -34,8 +32,10 @@ int main(int argc, char **argv)
         i = 1;
     while (argv[i])
         parsing(argv[i++]);
-    check_doubles(argv);
-    main2(argv, &a);
+    if (argc == 2)
+        main2(argv, &a);
+    else
+        main2(argv + 1, &a);
     if (argv_split)
         free_argv(argv_split);
     return (0);

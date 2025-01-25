@@ -6,7 +6,7 @@
 /*   By: iheb <iheb@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 16:00:30 by ihhadjal          #+#    #+#             */
-/*   Updated: 2025/01/18 17:41:46 by iheb             ###   ########.fr       */
+/*   Updated: 2025/01/25 14:46:38 by iheb             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,26 +35,6 @@ int	check_min_max(char *str)
 		i++;
     }
     return (0);
-}
-
-int	check_doubles(char **argv)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (argv[i])
-	{
-		j = i + 1;
-		while (argv[j])
-		{
-			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
-				return(ft_printf("Error: insert the number once\n"), 1);
-			j++;
-		}
-		i++;
-	}
-	return (0);
 }
 
 int	check_argument(char *str)

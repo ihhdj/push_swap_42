@@ -6,7 +6,7 @@
 /*   By: iheb <iheb@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 12:22:03 by ihhadjal          #+#    #+#             */
-/*   Updated: 2025/01/25 12:13:54 by iheb             ###   ########.fr       */
+/*   Updated: 2025/01/25 14:53:00 by iheb             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,11 @@ typedef struct s_stack
 
 void	parsing(char *str);
 int		check_argument(char *str);
-int     check_doubles(char **argv);
+int 	check_doubles(t_stack *stack, long nb);
 int     check_min_max(char *str);
 void    free_argv(char **str);
 void    append_node(int num, t_stack **stack);
 void    init_stack(char **argv, t_stack **stack);
 void    main2(char **argv, t_stack **stack);
+void    print_stack(t_stack *stack);
 #endif

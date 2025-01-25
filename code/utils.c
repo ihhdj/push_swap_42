@@ -6,7 +6,7 @@
 /*   By: iheb <iheb@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 14:24:04 by iheb              #+#    #+#             */
-/*   Updated: 2025/01/25 11:57:35 by iheb             ###   ########.fr       */
+/*   Updated: 2025/01/25 14:22:47 by iheb             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,13 @@ void    free_argv(char **str)
     while (str[i])
         free(str[i++]);
     free (str);
+}
+
+void	print_stack(t_stack *stack)
+{
+	while (stack)
+	{
+		ft_printf("%d\n", stack->value);
+		stack = stack->next;
+	}
 }

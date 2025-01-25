@@ -6,10 +6,11 @@
 #    By: iheb <iheb@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/02 12:09:38 by ihhadjal          #+#    #+#              #
-#    Updated: 2025/01/25 13:48:50 by iheb             ###   ########.fr        #
+#    Updated: 2025/01/25 14:15:52 by iheb             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+# Couleurs et formatage
 GREEN	= \033[0;32m
 RED		= \033[0;31m
 ORANGE	= \033[0;33m
@@ -18,7 +19,7 @@ CYAN	= \033[0;36m
 BOLD	= \033[1m
 RESET	= \033[0m
 
-
+# Symbols
 CHECK	= $(GREEN)✓$(RESET)
 CROSS	= $(RED)✗$(RESET)
 GEAR	= $(ORANGE)⚙️$(RESET)
@@ -35,6 +36,7 @@ LIBFT	= ./resources/libft
 TOTAL	= $(words $(SRCS))
 PROGRESS_FILE = .make_progress
 
+# Barre de progression avec gestion d'erreurs
 define progress_bar
 @if [ ! -f $(PROGRESS_FILE) ]; then echo 0 > $(PROGRESS_FILE); fi
 @current=$$(($$(cat $(PROGRESS_FILE)) + 1)); \
@@ -46,9 +48,12 @@ bar=""; \
 for i in $$(seq 1 $$filled); do bar="$${bar}█"; done; \
 for i in $$(seq 1 $$remaining); do bar="$${bar}▁"; done; \
 printf "\r[$(CYAN)$${bar}$(RESET)] $(BOLD)%3d%%$(RESET) Compilation globale..." $$percent; \
-$(CC) $(CFLAGS) -c -o $@ $< 2> /dev/null; \
-if [ $$? -ne 0 ]; then \
-    printf "\r$(RED)✗ Compilation failed on $<$(RESET)\n"; \
+if ! ${CC} ${CFLAGS} -c -o $@ $< 2>&1; then \
+    printf "\n\n$(RED)――――――――――――――――――――――――――――――――――――――――――――――――$(RESET)\n"; \
+    printf "$(RED)✗ ERREUR DE COMPILATION dans $(BOLD)$<$(RESET)\n\n"; \
+    ${CC} ${CFLAGS} -c -o $@ $<; \
+    printf "\n$(RED)――――――――――――――――――――――――――――――――――――――――――――――――$(RESET)\n"; \
+    $(RM) $(PROGRESS_FILE); \
     exit 1; \
 fi; \
 if [ $$current -eq $(TOTAL) ]; then \
