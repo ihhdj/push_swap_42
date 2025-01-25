@@ -6,7 +6,7 @@
 /*   By: iheb <iheb@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 10:47:31 by iheb              #+#    #+#             */
-/*   Updated: 2025/01/25 15:16:01 by iheb             ###   ########.fr       */
+/*   Updated: 2025/01/25 19:35:21 by iheb             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void    append_node(int num, t_stack **stack)
     else
     {
         tmp = *stack;
-        while(tmp->next)
+        while(tmp->next != NULL)
             tmp = tmp->next;
         tmp->next = new_node;
     }

@@ -6,12 +6,11 @@
 #    By: iheb <iheb@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/02 12:09:38 by ihhadjal          #+#    #+#              #
-#    Updated: 2025/01/25 15:44:11 by iheb             ###   ########.fr        #
+#    Updated: 2025/01/25 16:36:43 by iheb             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# Couleurs et formatage
-# GREEN	= \033[0;32m
+GREEN	= \033[0;32m
 RED		= \033[0;31m
 ORANGE	= \033[0;33m
 BLUE	= \033[0;34m
@@ -19,8 +18,7 @@ CYAN	= \033[0;36m
 BOLD	= \033[1m
 RESET	= \033[0m
 
-# Symbols
-CHECK	= $(RED)✓$(RESET)
+CHECK	= $(GREEN)✓$(RESET)
 CROSS	= $(RED)✗$(RESET)
 GEAR	= $(ORANGE)⚙️$(RESET)
 TRASH	= $(ORANGE)🗑️$(RESET)
@@ -36,7 +34,6 @@ LIBFT	= ./resources/libft
 TOTAL	= $(words $(SRCS))
 PROGRESS_FILE = .make_progress
 
-# Barre de progression avec gestion d'erreurs
 define progress_bar
 @if [ ! -f $(PROGRESS_FILE) ]; then echo 0 > $(PROGRESS_FILE); fi
 @current=$$(($$(cat $(PROGRESS_FILE)) + 1)); \
@@ -57,7 +54,7 @@ if ! ${CC} ${CFLAGS} -c -o $@ $< 2>&1; then \
     exit 1; \
 fi; \
 if [ $$current -eq $(TOTAL) ]; then \
-    printf "\r[$(RED)████████████████████$(RESET)] $(BOLD)100%%$(RESET) Compilation terminée!  \n"; \
+    printf "\r[$(RED)####################$(RESET)] $(BOLD)100%%$(RESET) Compilation terminée!  \n"; \
 fi
 endef
 

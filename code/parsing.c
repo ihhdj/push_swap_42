@@ -6,7 +6,7 @@
 /*   By: iheb <iheb@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 16:00:30 by ihhadjal          #+#    #+#             */
-/*   Updated: 2025/01/25 14:46:38 by iheb             ###   ########.fr       */
+/*   Updated: 2025/01/25 16:33:28 by iheb             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 void	parsing(char *str)
 {
-	check_argument(str);
-	check_min_max(str);
+	if (check_argument(str) || check_min_max(str))
+	
+	exit (1);
 }
 int	check_min_max(char *str)
 {
