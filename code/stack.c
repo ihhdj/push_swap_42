@@ -6,7 +6,7 @@
 /*   By: iheb <iheb@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 10:47:31 by iheb              #+#    #+#             */
-/*   Updated: 2025/01/25 14:59:44 by iheb             ###   ########.fr       */
+/*   Updated: 2025/01/25 15:16:01 by iheb             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void    init_stack(char **argv, t_stack **stack)
     i = 0;
     while (argv[i])
     {
+        parsing(argv[i]);
         num = ft_atoi(argv[i]);
         if (check_doubles(*stack, num))
         {
