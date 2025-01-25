@@ -6,12 +6,12 @@
 #    By: iheb <iheb@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/02 12:09:38 by ihhadjal          #+#    #+#              #
-#    Updated: 2025/01/25 14:15:52 by iheb             ###   ########.fr        #
+#    Updated: 2025/01/25 15:44:11 by iheb             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Couleurs et formatage
-GREEN	= \033[0;32m
+# GREEN	= \033[0;32m
 RED		= \033[0;31m
 ORANGE	= \033[0;33m
 BLUE	= \033[0;34m
@@ -20,7 +20,7 @@ BOLD	= \033[1m
 RESET	= \033[0m
 
 # Symbols
-CHECK	= $(GREEN)✓$(RESET)
+CHECK	= $(RED)✓$(RESET)
 CROSS	= $(RED)✗$(RESET)
 GEAR	= $(ORANGE)⚙️$(RESET)
 TRASH	= $(ORANGE)🗑️$(RESET)
@@ -57,12 +57,12 @@ if ! ${CC} ${CFLAGS} -c -o $@ $< 2>&1; then \
     exit 1; \
 fi; \
 if [ $$current -eq $(TOTAL) ]; then \
-    printf "\r[$(GREEN)████████████████████$(RESET)] $(BOLD)100%%$(RESET) Compilation terminée!  \n"; \
+    printf "\r[$(RED)████████████████████$(RESET)] $(BOLD)100%%$(RESET) Compilation terminée!  \n"; \
 fi
 endef
 
 all: init_progress ${NAME}
-	@echo "\n$(ROCKET) $(BOLD)$(GREEN)Push_swap prêt !$(RESET) $(ROCKET)"
+	@echo "\n$(ROCKET) $(BOLD)$(RED)Push_swap prêt !$(RESET) $(ROCKET)"
 	@$(RM) $(PROGRESS_FILE)
 
 init_progress:
