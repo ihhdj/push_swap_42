@@ -6,7 +6,7 @@
 /*   By: iheb <iheb@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 12:33:37 by ihhadjal          #+#    #+#             */
-/*   Updated: 2025/01/25 16:43:09 by iheb             ###   ########.fr       */
+/*   Updated: 2025/01/26 13:49:54 by iheb             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,10 @@ int main(int argc, char **argv)
         argv = argv_split;
     }
     if (argc == 2)
-        main2(argv, &a);
+        init_stack(argv, &a);
     else
-        main2(argv + 1, &a);
+        init_stack(argv + 1, &a);
     if (argv_split)
         free_argv(argv_split);
     return (0);
-}
-
-void    main2(char **argv, t_stack **stack)
-{
-    init_stack(argv, stack);
 }
