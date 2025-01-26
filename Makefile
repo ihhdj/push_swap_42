@@ -6,7 +6,7 @@
 #    By: iheb <iheb@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/02 12:09:38 by ihhadjal          #+#    #+#              #
-#    Updated: 2025/01/25 16:36:43 by iheb             ###   ########.fr        #
+#    Updated: 2025/01/26 14:05:19 by iheb             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,10 +66,8 @@ init_progress:
 	@echo 0 > $(PROGRESS_FILE)
 
 ${NAME}: ${OBJS}
-	@printf "$(GEAR) Construction de Libft..."
-	@${MAKE} -C ${LIBFT} > /dev/null 2>&1 && echo "\r$(CHECK) Libft construite !" || { echo "\r$(CROSS) Échec de Libft !"; exit 1; }
-	@printf "$(GEAR) Édition des liens..."
-	@${CC} ${CFLAGS} -o ${NAME} ${OBJS} ${LIBFT}/libft.a > /dev/null 2>&1 && echo "\r$(CHECK) Liens complétés !" || { echo "\r$(CROSS) Échec des liens !"; exit 1; }
+	@${MAKE} -C ${LIBFT} > /dev/null 2>&1 && echo "\r$(CHECK) Libft construite!" || { echo "\r$(CROSS) Échec de Libft!"; exit 1; }
+	@${CC} ${CFLAGS} -o ${NAME} ${OBJS} ${LIBFT}/libft.a > /dev/null 2>&1 && echo "\r$(CHECK) Liens complétés!" || { echo "\r$(CROSS) Échec des liens !"; exit 1; }
 
 %.o: %.c
 	$(progress_bar)
