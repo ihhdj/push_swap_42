@@ -6,7 +6,7 @@
 /*   By: deniayoubov <deniayoubov@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 12:22:03 by ihhadjal          #+#    #+#             */
-/*   Updated: 2025/01/28 13:42:11 by deniayoubov      ###   ########.fr       */
+/*   Updated: 2025/01/28 13:42:55 by deniayoubov      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,5 @@ void    print_stack(t_stack *stack);
 void    swap_instruction(t_stack **stack);
 void    sa(t_stack **stack_a);
 void    sb(t_stack **stack_b);
-void    ss(t_stack **stack_a, t_stack **stack_b)
+void    ss(t_stack **stack_a, t_stack **stack_b);
 #endif
