@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: deniayoubov <deniayoubov@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ihhadjal <ihhadjal@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 10:47:31 by iheb              #+#    #+#             */
-/*   Updated: 2025/01/28 12:13:41 by deniayoubov      ###   ########.fr       */
+/*   Updated: 2025/01/28 13:47:30 by ihhadjal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,10 @@ void    init_stack(char **argv, t_stack **stack)
 {
     int     i;
     long    num;
+   // t_stack *b;
 
     i = 0;
+    //b = NULL;
     while (argv[i])
     {
         parsing(argv[i]);
@@ -30,7 +32,10 @@ void    init_stack(char **argv, t_stack **stack)
         append_node((int)num, stack);
         i++;
     }
-    swap_instruction(stack);
+    printf("stack before rotate\n");
+    print_stack(*stack);
+    printf("stack after rotate\n");
+    rotate_instruction(stack);
     print_stack(*stack);
 }
 

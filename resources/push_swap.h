@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: deniayoubov <deniayoubov@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ihhadjal <ihhadjal@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 12:22:03 by ihhadjal          #+#    #+#             */
-/*   Updated: 2025/01/28 13:42:55 by deniayoubov      ###   ########.fr       */
+/*   Updated: 2025/01/28 13:42:55 by ihhadjal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,13 @@ void    swap_instruction(t_stack **stack);
 void    sa(t_stack **stack_a);
 void    sb(t_stack **stack_b);
 void    ss(t_stack **stack_a, t_stack **stack_b);
+void    push_instruction(t_stack **src, t_stack **dest);
+void    pa(t_stack **a, t_stack **b);
+void    pb(t_stack **a, t_stack **b);
+int 	stack_len(t_stack *stack);
+void    rotate_instruction(t_stack **stack);
+void    ra(t_stack **stack_a);
+void    rb(t_stack **stack_b);
+void    rr(t_stack **stack_a, t_stack **stack_b);
+t_stack *find_last_node(t_stack **stack);
 #endif

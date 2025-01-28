@@ -1,49 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ihhadjal <ihhadjal@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/17 14:24:04 by iheb              #+#    #+#             */
-/*   Updated: 2025/01/28 14:52:26 by ihhadjal      ###   ########.fr       */
+/*   Created: 2025/01/28 16:02:07 by ihhadjal       #+#    #+#             */
+/*   Updated: 2025/01/28 16:02:08 by ihhadjal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../resources/push_swap.h"
 
-void    free_argv(char **str)
+void    push_instruction(t_stack **src, t_stack **dest)
 {
-    int i;
+    t_stack *temp_node;
 
-    i = 0;
-    while (str[i])
-        free(str[i++]);
-    free (str);
-}
-
-void	print_stack(t_stack *stack)
-{
-    if (stack == NULL)
+    if (*src == NULL)
         return ;
-	while (stack)
-	{
-		ft_printf("%d\n", stack->value);
-		stack = stack->next;
-	}
+    temp_node = *src;
+    *src = (*src)->next;
+    temp_node->next = *dest;
+    *dest = temp_node;
 }
 
-int stack_len(t_stack *stack)
+void    pa(t_stack **a, t_stack **b)
 {
-    int size;
+    push_instruction(b, a);
+    write(1, "pa\n", 3);
+}
 
-    size = 0;
-    if (!stack)
-        return (0);
-    while (stack)
-    {
-        stack = stack->next;
-        size++;
-    }
-    return (size);
+void    pb(t_stack **a, t_stack **b)
+{
+    push_instruction(a, b);
+    write(1, "pb\n", 3);
 }

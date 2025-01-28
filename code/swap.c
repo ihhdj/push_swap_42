@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: deniayoubov <deniayoubov@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ihhadjal <ihhadjal@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/28 11:11:30 by deniayoubov       #+#    #+#             */
-/*   Updated: 2025/01/28 13:41:53 by deniayoubov      ###   ########.fr       */
+/*   Created: 2025/01/28 11:11:30 by ihhadjal       #+#    #+#             */
+/*   Updated: 2025/01/28 13:41:53 by ihhadjal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

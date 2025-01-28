@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: deniayoubov <deniayoubov@student.42.fr>    +#+  +:+       +#+         #
+#    By: ihhadjal <ihhadjal@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/02 12:09:38 by ihhadjal          #+#    #+#              #
-#    Updated: 2025/01/28 11:12:07 by deniayoubov      ###   ########.fr        #
+#    Updated: 2025/01/28 11:12:07 by ihhadjal      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ GEAR	= $(ORANGE)⚙️$(RESET)
 TRASH	= $(ORANGE)🗑️$(RESET)
 ROCKET	= $(BLUE)🚀$(RESET)
 
-SRCS	= code/main.c code/parsing.c code/utils.c code/stack.c code/swap.c
+SRCS	= code/main.c code/parsing.c code/utils.c code/stack.c code/swap.c code/push.c code/rotate.c
 OBJS	= ${SRCS:.c=.o}
 NAME	= push_swap
 CC		= gcc
