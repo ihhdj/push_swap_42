@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iheb <iheb@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: deniayoubov <deniayoubov@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 10:47:31 by iheb              #+#    #+#             */
-/*   Updated: 2025/01/25 19:35:21 by iheb             ###   ########.fr       */
+/*   Updated: 2025/01/28 12:13:41 by deniayoubov      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ void    init_stack(char **argv, t_stack **stack)
         append_node((int)num, stack);
         i++;
     }
+    swap_instruction(stack);
+    print_stack(*stack);
 }
 
 void    append_node(int num, t_stack **stack)
