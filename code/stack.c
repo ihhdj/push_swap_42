@@ -31,12 +31,12 @@ void    init_stack(char **argv, t_stack **stack)
         }
         append_node((int)num, stack);
         i++;
-    }
+    }/* 
     printf("stack before rotate\n");
     print_stack(*stack);
     printf("stack after rotate\n");
     reverse_rotate_instruction(stack);
-    print_stack(*stack);
+    print_stack(*stack); */
 }
 
 void    append_node(int num, t_stack **stack)
@@ -61,6 +61,7 @@ void    append_node(int num, t_stack **stack)
         tmp->next = new_node;
     }
 }
+
 int check_doubles(t_stack *stack, long nb)
 {
     while (stack)

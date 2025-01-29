@@ -16,10 +16,8 @@ int main(int argc, char **argv)
 {
     char    **argv_split;
     t_stack *a;
-  //t_stack *b;
     
     a = NULL;
-    //b = NULL;
 	argv_split = NULL;
     if (argc == 1 || (argc == 2 && !argv[1][0]))
         return (ft_printf("Error: the argument is empty\n"), 1);
@@ -34,5 +32,17 @@ int main(int argc, char **argv)
         init_stack(argv + 1, &a);
     if (argv_split)
         free_argv(argv_split);
+    main2(a);
     return (0);
+}
+
+void    main2(t_stack *a)
+{
+    if (is_stack_sorted(a))
+    {
+        if (stack_len(a) == 2)
+            sa(&a);
+        else if (stack_len(a) == 3)
+            small_sort(a);
+    }
 }

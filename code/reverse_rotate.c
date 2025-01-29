@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: deniayoubov <deniayoubov@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ihhadjal <ihhadjal@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/29 11:42:39 by deniayoubov       #+#    #+#             */
-/*   Updated: 2025/01/29 17:03:27 by deniayoubov      ###   ########.fr       */
+/*   Created: 2025/01/29 11:42:39 by ihhadjal       #+#    #+#             */
+/*   Updated: 2025/01/29 17:03:27 by ihhadjal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

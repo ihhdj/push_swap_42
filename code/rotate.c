@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: deniayoubov <deniayoubov@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ihhadjal <ihhadjal@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/28 16:45:33 by deniayoubov       #+#    #+#             */
-/*   Updated: 2025/01/29 17:07:36 by deniayoubov      ###   ########.fr       */
+/*   Created: 2025/01/28 16:45:33 by ihhadjal       #+#    #+#             */
+/*   Updated: 2025/01/29 17:07:36 by ihhadjal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

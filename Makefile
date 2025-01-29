@@ -25,7 +25,7 @@ TRASH	= $(ORANGE)🗑️$(RESET)
 ROCKET	= $(BLUE)🚀$(RESET)
 
 SRCS	= code/main.c code/parsing.c code/utils.c code/stack.c code/swap.c code/push.c \
-			code/rotate.c code/reverse_rotate.c
+			code/rotate.c code/reverse_rotate.c code/sort_stack.c
 OBJS	= ${SRCS:.c=.o}
 NAME	= push_swap
 CC		= gcc

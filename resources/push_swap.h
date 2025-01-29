@@ -53,4 +53,7 @@ void	reverse_rotate_instruction(t_stack **stack);
 void    rra(t_stack **stack_a);
 void    rrb(t_stack **stack_b);
 void    rrr(t_stack **stack_a, t_stack  **stack_b);
+void    main2(t_stack *a);
+int		is_stack_sorted(t_stack *stack);
+void    small_sort(t_stack  *stack);
 #endif
