@@ -35,7 +35,7 @@ void    init_stack(char **argv, t_stack **stack)
     printf("stack before rotate\n");
     print_stack(*stack);
     printf("stack after rotate\n");
-    rotate_instruction(stack);
+    reverse_rotate_instruction(stack);
     print_stack(*stack);
 }
 

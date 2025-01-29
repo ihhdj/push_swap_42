@@ -6,7 +6,7 @@
 /*   By: deniayoubov <deniayoubov@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 16:45:33 by deniayoubov       #+#    #+#             */
-/*   Updated: 2025/01/28 19:50:59 by deniayoubov      ###   ########.fr       */
+/*   Updated: 2025/01/29 17:07:36 by deniayoubov      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,16 @@
 
 void    rotate_instruction(t_stack **stack)
 {
+    t_stack *first_node;
     t_stack *last_node;
 
-    if (*stack == NULL)
+    if (*stack == NULL || (*stack)->next == NULL)
         return ;
+    first_node = *stack;
     last_node = find_last_node(stack);
-    *stack = (*stack)->next;
-    last_node->next = *stack;
-    *stack = last_node;
+    *stack = first_node->next;
+    first_node->next = NULL;
+    last_node->next = first_node;
 }
 
 void    ra(t_stack **stack_a)
