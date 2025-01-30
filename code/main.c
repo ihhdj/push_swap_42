@@ -33,6 +33,7 @@ int main(int argc, char **argv)
     if (argv_split)
         free_argv(argv_split);
     main2(a);
+    free_stack(&a);
     return (0);
 }
 

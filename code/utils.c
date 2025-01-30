@@ -57,11 +57,23 @@ t_stack *find_max_node(t_stack **stack)
     biggest = *stack;
     if (*stack == NULL)
         return (NULL);
-    while(current)
+    while(current->next)
     {
         if (biggest->value < current->value)
             biggest = current;
         current = current->next;
     }
     return (biggest);
+}
+
+void    free_stack(t_stack **stack)
+{
+    t_stack *temp;
+
+    while(*stack)
+    {
+        temp = (*stack)->next;
+        free(*stack);
+        *stack = temp;
+    }
 }

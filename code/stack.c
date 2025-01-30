@@ -27,6 +27,7 @@ void    init_stack(char **argv, t_stack **stack)
         if (check_doubles(*stack, num))
         {
             ft_printf("Error: insert the number once\n");
+            free_stack(stack);
             return;
         }
         append_node((int)num, stack);

@@ -57,4 +57,5 @@ void    main2(t_stack *a);
 int		is_stack_sorted(t_stack *stack);
 void    small_sort(t_stack  **stack);
 t_stack *find_max_node(t_stack **stack);
+void	free_stack(t_stack **stack);
 #endif
