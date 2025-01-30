@@ -47,3 +47,21 @@ int stack_len(t_stack *stack)
     }
     return (size);
 }
+
+t_stack *find_max_node(t_stack **stack)
+{
+    t_stack *current;
+    t_stack *biggest;
+
+    current = *stack;
+    biggest = *stack;
+    if (*stack == NULL)
+        return (NULL);
+    while(current)
+    {
+        if (biggest->value < current->value)
+            biggest = current;
+        current = current->next;
+    }
+    return (biggest);
+}

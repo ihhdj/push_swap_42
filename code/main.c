@@ -42,7 +42,7 @@ void    main2(t_stack *a)
     {
         if (stack_len(a) == 2)
             sa(&a);
-        else if (stack_len(a) == 3)
-            small_sort(a);
+        if (stack_len(a) == 3)
+            small_sort(&a);
     }
 }
