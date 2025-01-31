@@ -33,7 +33,6 @@ int main(int argc, char **argv)
     if (argv_split)
         free_argv(argv_split);
     main2(a);
-    free_stack(&a);
     return (0);
 }
 
@@ -46,4 +45,5 @@ void    main2(t_stack *a)
         if (stack_len(a) == 3)
             small_sort(&a);
     }
+    free_stack(a);
 }

@@ -24,13 +24,13 @@ void    free_argv(char **str)
 
 void	print_stack(t_stack *stack)
 {
-    if (stack == NULL)
+    if (!stack)
         return ;
-	while (stack)
-	{
-		ft_printf("%d\n", stack->value);
-		stack = stack->next;
-	}
+    while (stack)
+    {
+        ft_printf("%d\n", stack->value);
+        stack = stack->next;
+    }
 }
 
 int stack_len(t_stack *stack)
@@ -66,14 +66,14 @@ t_stack *find_max_node(t_stack **stack)
     return (biggest);
 }
 
-void    free_stack(t_stack **stack)
+void    free_stack(t_stack *stack)
 {
     t_stack *temp;
 
-    while(*stack)
+    while(stack)
     {
-        temp = (*stack)->next;
-        free(*stack);
-        *stack = temp;
+        temp = stack->next;
+        free(stack);
+        stack = temp;
     }
 }
