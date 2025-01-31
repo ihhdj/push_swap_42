@@ -12,32 +12,26 @@
 
 #include "../resources/push_swap.h"
 
-void    init_stack(char **argv, t_stack **stack)
+int    init_stack(char **argv, t_stack **stack)
 {
     int     i;
     long    num;
-   // t_stack *b;
 
     i = 0;
-    //b = NULL;
     while (argv[i])
     {
-        parsing(argv[i]);
+        if (parsing(argv[i]))
+            return (1);
         num = ft_atoi(argv[i]);
         if (check_doubles(*stack, num))
         {
             ft_printf("Error: insert the number once\n");
-            free_stack(*stack);
-            return;
+            return (1);
         }
         append_node((int)num, stack);
         i++;
-    }/* 
-    printf("stack before rotate\n");
-    print_stack(*stack);
-    printf("stack after rotate\n");
-    reverse_rotate_instruction(stack);
-    print_stack(*stack); */
+    }
+    return (0);
 }
 
 void    append_node(int num, t_stack **stack)

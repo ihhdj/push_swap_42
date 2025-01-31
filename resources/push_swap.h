@@ -28,13 +28,13 @@ typedef struct s_stack
 	struct s_stack	*next;
 }   				t_stack;
 
-void	parsing(char *str);
+int	parsing(char *str);
 int		check_argument(char *str);
 int 	check_doubles(t_stack *stack, long nb);
 int     check_min_max(char *str);
 void    free_argv(char **str);
 void    append_node(int num, t_stack **stack);
-void    init_stack(char **argv, t_stack **stack);
+int     init_stack(char **argv, t_stack **stack);
 void    print_stack(t_stack *stack);
 void    swap_instruction(t_stack **stack);
 void    sa(t_stack **stack_a);
