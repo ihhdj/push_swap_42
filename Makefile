@@ -24,7 +24,9 @@ GEAR	= $(ORANGE)⚙️$(RESET)
 TRASH	= $(ORANGE)🗑️$(RESET)
 ROCKET	= $(BLUE)🚀$(RESET)
 
-SRCS	= code/main.c code/parsing.c code/utils.c code/stack.c code/swap.c code/push.c code/rotate.c code/reverse_rotate.c code/sort_stack.c code/utils2.c code/utils3.c
+SRCS	= code/main.c code/parsing.c code/utils.c code/stack.c code/swap.c \
+			code/push.c code/rotate.c code/reverse_rotate.c \
+			code/sort_stack.c code/utils2.c code/utils3.c code/utils4.c
 OBJS	= ${SRCS:.c=.o}
 NAME	= push_swap
 CC		= gcc
@@ -67,7 +69,7 @@ init_progress:
 
 ${NAME}: ${OBJS}
 	@${MAKE} -C ${LIBFT} > /dev/null 2>&1 && echo "\r$(CHECK) Libft construite!" || { echo "\r$(CROSS) Échec de Libft!"; exit 1; }
-	@${CC} ${CFLAGS} -o ${NAME} ${OBJS} ${LIBFT}/libft.a > /dev/null 2>&1 && echo "\r$(CHECK) Liens complétés!" || { echo "\r$(CROSS) Échec des liens !"; exit 1; }
+	@${CC} ${CFLAGS} -o ${NAME} ${OBJS} ${LIBFT}/libft.a > /dev/null 2>&1&& echo "\r$(CHECK) Liens complétés!" || { echo "\r$(CROSS) Échec des liens !"; exit 1; }
 
 %.o: %.c
 	$(progress_bar)

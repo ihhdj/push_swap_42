@@ -42,13 +42,3 @@ void    rr(t_stack **stack_a, t_stack **stack_b)
     rotate_instruction(stack_b);
     write(1, "rr\n", 3);
 }
-t_stack *find_last_node(t_stack **stack)
-{
-    if (*stack == NULL)
-        return (NULL);
-    while ((*stack)->next)
-    {
-        *stack = (*stack)->next;
-    }
-    return (*stack);
-}

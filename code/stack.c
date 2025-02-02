@@ -69,31 +69,3 @@ int check_doubles(t_stack *stack, long nb)
     return (0);
 }
 
-t_stack *find_smallest(t_stack *stack)
-{
-    t_stack *smallest_node;
-    t_stack *current_node;
-
-    smallest_node = stack;
-    current_node = stack;
-    while (current_node)
-    {
-        if (smallest_node->value > current_node->value)
-            smallest_node = current_node;
-        current_node = current_node->next;
-    }
-    return (smallest_node);
-}
-
-t_stack *get_cheapest(t_stack *stack)
-{
-    if (!stack)
-        return (NULL);
-    while (stack)
-    {
-        if (stack->cheapest)
-            return (stack);
-        stack = stack->next;
-    }
-    return (NULL);
-}
