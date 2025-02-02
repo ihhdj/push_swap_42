@@ -3,77 +3,106 @@
 /*                                                        :::      ::::::::   */
 /*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: deniayoubov <deniayoubov@student.42.fr>    +#+  +:+       +#+        */
+/*   By: iheb <iheb@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 01:40:50 by deniayoubov       #+#    #+#             */
-/*   Updated: 2025/02/02 13:51:54 by deniayoubov      ###   ########.fr       */
+/*   Updated: 2025/02/02 18:48:57 by iheb             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../resources/push_swap.h"
 
-t_stack *find_smallest(t_stack *stack)
+void    current_index(t_stack *stack)
 {
-    t_stack *smallest_node;
-    t_stack *current_node;
-
-    smallest_node = stack;
-    current_node = stack;
-    while (current_node)
-    {
-        if (smallest_node->value > current_node->value)
-            smallest_node = current_node;
-        current_node = current_node->next;
-    }
-    return (smallest_node);
-}
-
-void    set_index(t_stack *stack, int stack_len)
-{
-    t_stack *biggest;
-    t_stack *temp;
-
-    while (stack_len-- > 0)
-    {
-        biggest = NULL;
-        temp = stack;
-        while (temp)
-        {
-            if(!temp->index && (biggest == NULL
-                || temp->value > biggest->value))
-                biggest = temp;
-            temp = temp->next;  
-        }
-        if (biggest)
-            biggest->index = stack_len;
-    }
-}
-
-int find_max_bits(int biggest)
-{
-    int max_bits;
-
-    max_bits = 0;
-    while (biggest > 0)
-    {
-        biggest >>= 1;
-        max_bits++;
-    }
-    return (max_bits);
-}
-
-int find_biggest(t_stack *stack)    
-{
-    int     biggest;
-    t_stack *tmp;
+    int i;
+    int median;
     
-    biggest = INT_MIN;
-    tmp = stack;
-    while (tmp)
+    i = 0;
+    if (!stack)
+        return ;
+    median = stack_len(stack) / 2;
+    while (stack)
     {
-        if (tmp->index > biggest)
-            biggest = tmp->index;
-        tmp = tmp->next;
+        stack->index = i;
+        if (i <= median)
+            stack->above_median = true;
+        else
+            stack->above_median = false;
+        stack = stack->next;
+        i++;
     }
-    return (biggest);
+}
+void    set_target_a(t_stack *a, t_stack *b)
+{
+    t_stack *current_b;
+    t_stack *target_node;
+    long    best_match_index;
+    
+    while (a)
+    {
+        best_match_index = LONG_MIN;
+        current_b = b;
+        while (current_b)
+        {
+            if (current_b->value < a->value 
+				&& current_b->value > best_match_index)
+            {
+                best_match_index = current_b->value;
+                target_node = current_b;
+            }
+            current_b = current_b->next;
+        }
+        if (best_match_index == LONG_MIN)
+            a->target_node = find_max_node(&b);
+        else
+            a->target_node = target_node;
+        a = a->next;
+    }   
+}
+void    cost_analysis_a(t_stack *a, t_stack *b)
+{
+    int len_a;
+    int len_b;
+
+    len_a = stack_len(a);
+    len_b = stack_len(b);
+    while (a)
+    {
+        a->push_cost = a->index;
+        if (!a->above_median)
+            a->push_cost = len_a - (a->index);
+        if (a->target_node->above_median)
+            a->push_cost += a->target_node->index;
+        else
+            a->push_cost += len_b - (a->target_node->index);
+        a = a->next;
+    }
+}
+void    set_cheapest(t_stack *stack)
+{
+    long    cheapest_value;
+    t_stack *cheapest_node;
+
+    if (!stack)
+        return ;
+    cheapest_value = LONG_MAX;
+    while (stack)
+    {
+        if (stack->push_cost < cheapest_value)
+        {
+            cheapest_value = stack->push_cost;
+            cheapest_node = stack;
+        }
+        stack = stack->next;
+    }
+    cheapest_node->cheapest = true;
+}
+
+void    init_nodes_a(t_stack *a, t_stack *b)
+{
+    current_index(a);
+    current_index(b);
+    set_target_a(a, b);
+    cost_analysis_a(a, b);
+    set_cheapest(a);
 }

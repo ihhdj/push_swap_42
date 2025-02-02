@@ -42,3 +42,25 @@ void    ss(t_stack **stack_a, t_stack **stack_b)
     swap_instruction(stack_b);
     write(1, "ss\n", 3);
 }
+
+void    prep_for_push(t_stack **stack, t_stack *top_node,
+                        char stack_name)
+{
+    while (*stack != top_node)
+	{
+		if (stack_name == 'a')
+		{
+			if (top_node->above_median)
+				ra(stack);
+			else
+				rra(stack) ;
+		}
+		else if (stack_name == 'b')
+		{
+			if (top_node->above_median)
+				rb(stack);
+			else
+				rrb(stack);
+		}	
+	}
+}

@@ -40,17 +40,14 @@ int main(int argc, char **argv)
 
 void    main2(t_stack *a, t_stack *b)
 {
-    set_index(a, stack_len(a));
-    if (is_stack_sorted(a))
+    if (!is_stack_sorted(a))
     {
         if (stack_len(a) == 2)
             sa(&a);
-        if (stack_len(a) == 3)
+        else if (stack_len(a) == 3)
             small_sort(&a);
-        if (stack_len(a) <= 5)
-            sort_five(&a, &b);
         else
-            radix_sort(&a, &b);
+            big_sort(&a, &b);
     }
     free_stack(a);
 }

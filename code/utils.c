@@ -57,7 +57,7 @@ t_stack *find_max_node(t_stack **stack)
     biggest = *stack;
     if (*stack == NULL)
         return (NULL);
-    while(current->next)
+    while(current)
     {
         if (biggest->value < current->value)
             biggest = current;

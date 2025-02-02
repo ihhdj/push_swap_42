@@ -25,6 +25,9 @@ typedef struct s_stack
 {
 	int				index;
 	int				value;
+	int				push_cost;
+	bool			above_median;
+	bool			cheapest;
 	struct s_stack *target_node;
 	struct s_stack	*next;
 }   				t_stack;
@@ -60,9 +63,20 @@ void    small_sort(t_stack  **stack);
 t_stack *find_max_node(t_stack **stack);
 void	free_stack(t_stack *stack);
 t_stack *find_smallest(t_stack *stack);
-void    set_index(t_stack *stack, int stack_len);
-void    sort_five(t_stack **a, t_stack **b);
-int 	find_max_bits(int biggest);
-void    radix_sort(t_stack **a, t_stack **b);
-int find_biggest(t_stack *stack);
+void    big_sort(t_stack **a, t_stack **b);
+void    current_index(t_stack *stack);
+void    init_nodes_a(t_stack *a, t_stack *b);
+void    set_target_a(t_stack *a, t_stack *b);
+void    cost_analysis_a(t_stack *a, t_stack *b);
+void	set_cheapest(t_stack *stack);
+t_stack *get_cheapest(t_stack *stack);
+void    rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node);
+void    rev_rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node);
+void    prep_for_push(t_stack **stack, t_stack *top_node,
+                        char stack_name);
+void	init_nodes_b(t_stack *a, t_stack *b);
+void	set_target_b(t_stack *a, t_stack *b);
+void	move_b_to_a(t_stack **a, t_stack **b);
+void    min_on_top(t_stack **a);
+void	move_a_to_b(t_stack **a, t_stack **b);
 #endif
