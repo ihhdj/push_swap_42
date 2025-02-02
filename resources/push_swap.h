@@ -28,6 +28,10 @@ typedef struct s_stack
 	struct s_stack	*next;
 }   				t_stack;
 
+typedef struct	s_error
+{
+	int	error;
+}	t_error;
 int	parsing(char *str);
 int		check_argument(char *str);
 int 	check_doubles(t_stack *stack, long nb);
@@ -53,7 +57,7 @@ void	reverse_rotate_instruction(t_stack **stack);
 void    rra(t_stack **stack_a);
 void    rrb(t_stack **stack_b);
 void    rrr(t_stack **stack_a, t_stack  **stack_b);
-void    main2(t_stack *a);
+void    main2(t_stack *a, t_error *error);
 int		is_stack_sorted(t_stack *stack);
 void    small_sort(t_stack  **stack);
 t_stack *find_max_node(t_stack **stack);
