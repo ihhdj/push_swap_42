@@ -23,11 +23,8 @@
 
 typedef struct s_stack
 {
+	int				index;
 	int				value;
-	int				current_postion;
-	int				push_price;
-	bool			above_median;
-	bool			cheapest;
 	struct s_stack *target_node;
 	struct s_stack	*next;
 }   				t_stack;
@@ -57,11 +54,15 @@ void	reverse_rotate_instruction(t_stack **stack);
 void    rra(t_stack **stack_a);
 void    rrb(t_stack **stack_b);
 void    rrr(t_stack **stack_a, t_stack  **stack_b);
-void    main2(t_stack *a);
+void    main2(t_stack *a, t_stack *b);
 int		is_stack_sorted(t_stack *stack);
 void    small_sort(t_stack  **stack);
 t_stack *find_max_node(t_stack **stack);
 void	free_stack(t_stack *stack);
-void	set_target_node(t_stack *a, t_stack *b);
 t_stack *find_smallest(t_stack *stack);
+void    set_index(t_stack *stack, int stack_len);
+void    sort_five(t_stack **a, t_stack **b);
+int 	find_max_bits(int biggest);
+void    radix_sort(t_stack **a, t_stack **b);
+int find_biggest(t_stack *stack);
 #endif

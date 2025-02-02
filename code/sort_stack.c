@@ -6,7 +6,7 @@
 /*   By: deniayoubov <deniayoubov@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 19:57:40 by deniayoubov       #+#    #+#             */
-/*   Updated: 2025/02/02 02:26:41 by deniayoubov      ###   ########.fr       */
+/*   Updated: 2025/02/02 13:50:32 by deniayoubov      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,51 +39,48 @@ void    small_sort(t_stack  **stack)
     if ((*stack)->value > (*stack)->next->value)
         sa(stack);
 }
-
-void    set_target_node(t_stack *a, t_stack *b)
+void    sort_five(t_stack **a, t_stack **b)
 {
-    t_stack *current_a;
-    t_stack *target_node;
-    long    best_match;
-    
-    while (b)
+    int len;
+
+    len = stack_len(*a);
+    while (len--)
     {
-        best_match = LONG_MAX;
-        current_a = a;
-        while (current_a)
-        {
-            if (current_a->value > b->value 
-                && current_a->value < best_match)
-            {
-                best_match = current_a->value;
-                target_node = current_a;
-            }
-            current_a = current_a->next;
-        }
-        if (LONG_MAX == best_match)
-            b->target_node = find_smallest(a);
+        if ((*a)->index == 0 || (*a)->index == 1)
+            pb(a, b);
         else
-            b->target_node = target_node;
-        b = b->next;
+            ra(a);
     }
+    small_sort(a);
+    pa(a, b);
+    pa(a, b);
+    if ((*a)->index > (*a)->next->index)
+        sa(a);
 }
 
-void    set_price(t_stack *a, t_stack *b)
+void    radix_sort(t_stack **a, t_stack **b)
 {
-    int len_a;
-    int len_b;
+    int biggest;
+    int max_bits;
+    int i;
+    int j;
 
-    len_a = stack_len(a);
-    len_b = stack_len(b);
-    while (b)
+    biggest = find_biggest(*a);
+    max_bits = find_max_bits(biggest);
+    i = 0;
+    while (i < max_bits)
     {
-        b->push_price = b->current_postion;
-        if (!(b->above_median))
-            b->push_price = len_b - (b->current_postion);
-        if (b->target_node->above_median)
-            b->push_price += b->target_node->current_postion;
-        else
-            b->push_price += len_a - (b->target_node->current_postion);
-        b = b->next;
+        j = 0;
+        while (j <= biggest)
+        {
+            if (((*a)->index >> i) & 1)
+                ra(a);
+            else
+                pb(a, b);
+            j++;
+        }
+        while (*b)
+            pa(a, b);
+        i++;
     }
 }
