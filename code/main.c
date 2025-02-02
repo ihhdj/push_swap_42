@@ -16,7 +16,6 @@ int main(int argc, char **argv)
 {
     char    **argv_split;
     t_stack *a;
-    t_error error;
 
     a = NULL;
 	argv_split = NULL;
@@ -28,22 +27,17 @@ int main(int argc, char **argv)
         argv = argv_split;
     }
     if (argc == 2)
-        error.error = init_stack(argv, &a);
+        init_stack(argv, &a);
     else
-        error.error = init_stack(argv + 1, &a);
+        init_stack(argv + 1, &a);
     if (argv_split)
         free_argv(argv_split);
-    main2(a, &error);
+    main2(a);
     return (0);
 }
 
-void    main2(t_stack *a, t_error *error)
+void    main2(t_stack *a)
 {
-    if (error->error)
-    {
-        free_stack(a);
-        return ;
-    }
     if (is_stack_sorted(a))
     {
         if (stack_len(a) == 2)
