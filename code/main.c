@@ -6,7 +6,7 @@
 /*   By: ihhadjal <ihhadjal@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 13:31:14 by ihhadjal          #+#    #+#             */
-/*   Updated: 2025/02/03 13:48:16 by ihhadjal         ###   ########.fr       */
+/*   Updated: 2025/02/03 15:00:13 by ihhadjal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,6 @@ int	main(int argc, char **argv)
 		free_argv(argv_split);
 	if (!error)
 		main2(a);
-	if (a)
-		free_stack(a);
 	return (0);
 }
 
