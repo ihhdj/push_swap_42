@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ihhadjal <ihhadjal@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ihhadjal <ihhadjal@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/29 11:42:39 by ihhadjal       #+#    #+#             */
-/*   Updated: 2025/01/29 17:03:27 by ihhadjal      ###   ########.fr       */
+/*   Created: 2025/02/03 13:31:47 by ihhadjal          #+#    #+#             */
+/*   Updated: 2025/02/03 13:31:49 by ihhadjal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
