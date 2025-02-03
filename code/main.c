@@ -6,7 +6,7 @@
 /*   By: ihhadjal <ihhadjal@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 13:31:14 by ihhadjal          #+#    #+#             */
-/*   Updated: 2025/02/03 13:31:16 by ihhadjal         ###   ########.fr       */
+/*   Updated: 2025/02/03 13:48:16 by ihhadjal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,8 @@ int	main(int argc, char **argv)
 	char	**argv_split;
 	int		error;
 	t_stack	*a;
-	t_stack	*b;
 
 	a = NULL;
-	b = NULL;
 	argv_split = NULL;
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (ft_printf("Error: the argument is empty\n"), 1);
@@ -36,12 +34,17 @@ int	main(int argc, char **argv)
 	if (argv_split)
 		free_argv(argv_split);
 	if (!error)
-		main2(a, b);
+		main2(a);
+	if (a)
+		free_stack(a);
 	return (0);
 }
 
-void	main2(t_stack *a, t_stack *b)
+void	main2(t_stack *a)
 {
+	t_stack	*b;
+
+	b = NULL;
 	if (!is_stack_sorted(a))
 	{
 		if (stack_len(a) == 2)
@@ -52,5 +55,4 @@ void	main2(t_stack *a, t_stack *b)
 			big_sort(&a, &b);
 	}
 	free_stack(a);
-	free_stack(b);
 }
