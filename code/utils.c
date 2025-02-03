@@ -12,68 +12,68 @@
 
 #include "../resources/push_swap.h"
 
-void    free_argv(char **str)
+void	free_argv(char **str)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (str[i])
-        free(str[i++]);
-    free (str);
+	i = 0;
+	while (str[i])
+		free(str[i++]);
+	free(str);
 }
 
 void	print_stack(t_stack *stack)
 {
-    if (!stack)
-        return ;
-    while (stack)
-    {
-        ft_printf("%d\n", stack->value);
-        stack = stack->next;
-    }
+	if (!stack)
+		return ;
+	while (stack)
+	{
+		ft_printf("%d\n", stack->value);
+		stack = stack->next;
+	}
 }
 
-int stack_len(t_stack *stack)
+int	stack_len(t_stack *stack)
 {
-    int size;
+	int	size;
 
-    size = 0;
-    if (!stack)
-        return (0);
-    while (stack)
-    {
-        stack = stack->next;
-        size++;
-    }
-    return (size);
+	size = 0;
+	if (!stack)
+		return (0);
+	while (stack)
+	{
+		stack = stack->next;
+		size++;
+	}
+	return (size);
 }
 
-t_stack *find_max_node(t_stack **stack)
+t_stack	*find_max_node(t_stack **stack)
 {
-    t_stack *current;
-    t_stack *biggest;
+	t_stack	*current;
+	t_stack	*biggest;
 
-    current = *stack;
-    biggest = *stack;
-    if (*stack == NULL)
-        return (NULL);
-    while(current)
-    {
-        if (biggest->value < current->value)
-            biggest = current;
-        current = current->next;
-    }
-    return (biggest);
+	current = *stack;
+	biggest = *stack;
+	if (*stack == NULL)
+		return (NULL);
+	while (current)
+	{
+		if (biggest->value < current->value)
+			biggest = current;
+		current = current->next;
+	}
+	return (biggest);
 }
 
-void    free_stack(t_stack *stack)
+void	free_stack(t_stack *stack)
 {
-    t_stack *temp;
+	t_stack	*temp;
 
-    while(stack)
-    {
-        temp = stack->next;
-        free(stack);
-        stack = temp;
-    }
+	while (stack)
+	{
+		temp = stack->next;
+		free(stack);
+		stack = temp;
+	}
 }

@@ -12,48 +12,47 @@
 
 #include "../resources/push_swap.h"
 
-void    swap_instruction(t_stack **stack)
+void	swap_instruction(t_stack **stack)
 {
-    t_stack *temp_node;
+	t_stack	*temp_node;
 
-    if (!(*stack)->next)
-        return ;
-    temp_node = (*stack)->next;
-    (*stack)->next = (*stack)->next->next;
-    temp_node->next = *stack;
-    *stack = temp_node;
+	if (!(*stack)->next)
+		return ;
+	temp_node = (*stack)->next;
+	(*stack)->next = (*stack)->next->next;
+	temp_node->next = *stack;
+	*stack = temp_node;
 }
 
-void    sa(t_stack **stack_a)
+void	sa(t_stack **stack_a)
 {
-    swap_instruction(stack_a);
-    write(1, "sa\n", 3);
+	swap_instruction(stack_a);
+	write(1, "sa\n", 3);
 }
 
-void    sb(t_stack **stack_b)
+void	sb(t_stack **stack_b)
 {
-    swap_instruction(stack_b);
-    write(1, "sb\n", 3);
+	swap_instruction(stack_b);
+	write(1, "sb\n", 3);
 }
 
-void    ss(t_stack **stack_a, t_stack **stack_b)
+void	ss(t_stack **stack_a, t_stack **stack_b)
 {
-    swap_instruction(stack_a);
-    swap_instruction(stack_b);
-    write(1, "ss\n", 3);
+	swap_instruction(stack_a);
+	swap_instruction(stack_b);
+	write(1, "ss\n", 3);
 }
 
-void    prep_for_push(t_stack **stack, t_stack *top_node,
-                        char stack_name)
+void	prep_for_push(t_stack **stack, t_stack *top_node, char stack_name)
 {
-    while (*stack != top_node)
+	while (*stack != top_node)
 	{
 		if (stack_name == 'a')
 		{
 			if (top_node->above_median)
 				ra(stack);
 			else
-				rra(stack) ;
+				rra(stack);
 		}
 		else if (stack_name == 'b')
 		{
@@ -61,6 +60,6 @@ void    prep_for_push(t_stack **stack, t_stack *top_node,
 				rb(stack);
 			else
 				rrb(stack);
-		}	
+		}
 	}
 }
