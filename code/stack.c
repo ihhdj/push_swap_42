@@ -6,7 +6,7 @@
 /*   By: ihhadjal <ihhadjal@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 13:32:16 by ihhadjal          #+#    #+#             */
-/*   Updated: 2025/02/03 13:32:19 by ihhadjal         ###   ########.fr       */
+/*   Updated: 2025/02/03 16:22:36 by ihhadjal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,15 @@ int	init_stack(char **argv, t_stack **stack)
 	while (argv[i])
 	{
 		if (parsing(argv[i]))
+		{
+			free_stack(*stack);
 			return (1);
+		}
 		num = ft_atoi(argv[i]);
 		if (check_doubles(*stack, num))
 		{
 			ft_printf("Error: insert the number once\n");
+			free_stack(*stack);
 			return (1);
 		}
 		append_node((int)num, stack);
