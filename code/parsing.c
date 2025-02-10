@@ -6,7 +6,7 @@
 /*   By: ihhadjal <ihhadjal@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 13:31:26 by ihhadjal          #+#    #+#             */
-/*   Updated: 2025/02/03 17:01:16 by ihhadjal         ###   ########.fr       */
+/*   Updated: 2025/02/06 12:15:31 by ihhadjal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	check_argument(char *str)
 		if (str[i + 1] == '-' || str[i + 1] == '+')
 			return (ft_printf("Error: insert only one logical operator\n"), 1);
 		if (!ft_isdigit(str[i]) && str[i] != '-' && str[i] != '+'
-			&& str[i] != ' ')
+			&& str[i] != ' ' && str[i] != '\t')
 			return (ft_printf("Error: insert numbers only\n"), 1);
 		if ((str[i] == '-' && str[i + 1] == '\0') || (str[i] == '+'
 				&& str[i + 1] == '\0'))

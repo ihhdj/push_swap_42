@@ -6,7 +6,7 @@
 /*   By: ihhadjal <ihhadjal@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 13:31:14 by ihhadjal          #+#    #+#             */
-/*   Updated: 2025/02/03 16:45:43 by ihhadjal         ###   ########.fr       */
+/*   Updated: 2025/02/06 12:08:24 by ihhadjal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ int	main(int argc, char **argv)
 
 	a = NULL;
 	argv_split = NULL;
-	if (argc == 1 || (argc == 2 && !argv[1][0]) || argv[1][0] == ' ')
+	if (argc == 1 || (argc == 2 && !argv[1][0]) || (argv[1][0] == ' '
+		&& argv[1][0] == '\0'))
 		return (ft_printf("Error: the argument is empty\n"), 1);
 	if (argc == 2)
 	{
